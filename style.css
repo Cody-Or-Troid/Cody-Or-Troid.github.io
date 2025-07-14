@@ -1,19 +1,17 @@
-/* CSS Variables for Theming - Set to grayish sage green dark fantasy theme */
 :root {
-    --bg-color: #36454F; /* Charcoal Grey with a hint of blue/green */
-    --text-color: #E0E0E0; /* Light Grey for contrast */
-    --header-bg: #40505A; /* Slightly lighter charcoal for header */
-    --card-bg: #4A5C6A; /* Muted blue-grey for cards */
-    --accent-primary: #8A9A5B; /* Muted Sage Green */
-    --accent-secondary: #6B7E4F; /* Darker Muted Sage Green */
-    --accent-hover: #A2B56F; /* Lighter Sage Green on hover */
-    --samples-bg: #30404A; /* Darker blue-grey for samples section */
-    --footer-bg: #2A363F; /* Deep charcoal for footer */
-    --footer-text: #E0E0E0; /* Light text for footer */
-    --shadow-color: rgba(0, 0, 0, 0.4); /* Darker shadows */
+    --bg-color: #36454F;
+    --text-color: #E0E0E0;
+    --header-bg: #40505A;
+    --card-bg: #4A5C6A;
+    --accent-primary: #8A9A5B;
+    --accent-secondary: #6B7E4F;
+    --accent-hover: #A2B56F;
+    --samples-bg: #30404A;
+    --footer-bg: #2A363F;
+    --footer-text: #E0E0E0;
+    --shadow-color: rgba(0, 0, 0, 0.4);
 }
 
-/* General Body Styling */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -22,7 +20,6 @@ body {
     line-height: 1.6;
 }
 
-/* Header and Navigation */
 header {
     background: var(--header-bg);
     padding: 1rem 0;
@@ -66,9 +63,6 @@ nav a:hover {
     color: var(--accent-hover);
 }
 
-/* Theme Switch Button - Removed from HTML, so these styles are no longer directly used */
-
-
 .hero {
     padding: 4rem 2rem;
     background-color: var(--bg-color);
@@ -85,7 +79,6 @@ nav a:hover {
     margin-top: 0.5rem;
 }
 
-/* Main Content Sections */
 main {
     max-width: 1200px;
     margin: 0 auto;
@@ -109,7 +102,6 @@ h2 {
     color: var(--text-color);
 }
 
-/* About Me Section */
 .about-content {
     display: flex;
     align-items: center;
@@ -119,12 +111,12 @@ h2 {
 }
 
 .author-photo {
-    border-radius: 50%; /* Makes the image circular */
+    border-radius: 50%;
     border: 5px solid var(--accent-secondary);
     max-width: 250px;
-    height: 250px; /* Set a fixed height to ensure perfect circle with fixed width */
-    object-fit: cover; /* Ensures the image covers the circular area without distortion */
-    aspect-ratio: 1 / 1; /* Explicitly sets aspect ratio to 1:1 for consistent sizing */
+    height: 250px;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
 }
 
 .about-content p {
@@ -133,7 +125,6 @@ h2 {
     text-align: left;
 }
 
-/* Project Gallery */
 .project-gallery {
     display: flex;
     justify-content: center;
@@ -168,7 +159,6 @@ h2 {
     color: var(--text-color);
 }
 
-/* Writing Samples Scroller */
 #samples {
     background-color: var(--samples-bg);
     padding: 4rem 0;
@@ -188,12 +178,12 @@ h2 {
     width: 80%;
     gap: 2rem;
     padding: 2rem 0;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .samples-container::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
+    display: none;
 }
 
 .sample-card {
@@ -238,8 +228,6 @@ h2 {
     right: 5%;
 }
 
-
-/* Footer */
 footer {
     background: var(--footer-bg);
     color: var(--footer-text);
@@ -253,37 +241,69 @@ footer h2 {
 
 .social-links {
     margin: 2rem 0;
-    display: flex; /* Use flexbox for social links */
-    justify-content: center; /* Center the social links */
-    gap: 1.5rem; /* Space between social icons */
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
 }
 
 .social-links a {
     color: var(--footer-text);
     font-size: 1.5rem;
-    margin: 0; /* Remove individual margins as gap handles spacing */
+    margin: 0;
     transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
-    padding: 0.75rem; /* Add padding to make them more like buttons */
-    border-radius: 50%; /* Make them circular */
-    background-color: rgba(255, 255, 255, 0.1); /* Slight background for button effect */
-    display: inline-flex; /* Ensure icon is centered within padding */
+    padding: 0.75rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: inline-flex;
     align-items: center;
     justify-content: center;
 }
 
 .social-links a:hover {
     color: var(--accent-primary);
-    transform: translateY(-5px); /* Lift effect on hover */
+    transform: translateY(-5px);
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Responsive Design */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+    }
+
+    .samples-container {
+        width: 95%;
+    }
+
+    .sample-card {
+        flex: 0 0 95%;
+        max-width: 95%;
+        padding: 1rem;
+    }
+}
+
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
         gap: 1rem;
     }
-    
+
     nav ul {
         gap: 1rem;
     }
@@ -294,19 +314,55 @@ footer h2 {
 
     .about-content {
         flex-direction: column;
+        text-align: center;
+    }
+
+    .about-content p {
+        min-width: unset;
+        flex: none;
+    }
+
+    .project-card {
+        width: 80%;
+        max-width: 400px;
     }
     
+    .samples-container {
+        width: 100%;
+        overflow-x: auto;
+        padding: 1rem 0;
+    }
+
     .sample-card {
         flex: 0 0 90%;
         max-width: 90%;
+        margin-right: 1.5rem;
+        box-sizing: border-box;
     }
 
     .scroll-btn {
-        display: none; /* Hide buttons on mobile, rely on swipe */
+        display: none;
     }
 
+    main {
+        padding: 1rem;
+    }
+
+    section {
+        padding: 2rem 0;
+    }
+}
+
+@media (max-width: 992px) {
     .samples-container {
-        width: 100%;
-        overflow-x: auto; /* Enable native swipe scrolling */
+        width: 90%;
+    }
+
+    #scroll-left {
+        left: 2%;
+    }
+
+    #scroll-right {
+        right: 2%;
     }
 }
